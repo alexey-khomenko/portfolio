@@ -1,0 +1,40 @@
+@mixin heading-2 {
+  display: block;
+  padding: 0 8px;
+  margin-bottom: 24px;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 48px;
+  color: $color-primary;
+  border-bottom: 3px solid $color-secondary-light;
+}
+
+@mixin heading-3 {
+  display: block;
+  margin-bottom: 12px;
+  font-size: 24px;
+  font-weight: 400;
+  color: $color-secondary;
+}
+
+@mixin paragraph {
+  display: block;
+  padding: 0 8px;
+  margin-bottom: 16px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: justify;
+  color: $color-secondary;
+}
+
+@mixin card {
+  display: block;
+  padding: 0 8px 8px;
+  margin-bottom: 24px;
+  flex-basis: 384px;
+
+  @media (max-width: 767px) {
+    flex-basis: auto;
+  }
+}
