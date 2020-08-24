@@ -23,4 +23,13 @@ $(function () {
         infobar: false,
         buttons: ['close']
     });
+
+    const
+        viber = $(".viber"),
+        mobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent),
+        command = mobile ? "add" : "chat",
+        tel = mobile ? viber.data("tel") : "+" + viber.data("tel")
+    ;
+
+    viber.attr("href", "viber://" + command + "?number=" + tel)
 });
