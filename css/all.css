@@ -240,13 +240,16 @@ main {
         display: block;
         font-size: 16px;
         font-weight: 700;
-        color: #3E7ABC; }
-      #header .right .contacts p {
-        display: block;
-        margin-bottom: 16px;
-        font-size: 14px;
-        font-weight: 400;
-        color: #333; }
+        color: #3E7ABC;
+      }
+
+#header .right .contacts p {
+  display: block;
+  margin-bottom: 16px;
+  font-size: 14px;
+  font-weight: 400;
+  color: #333;
+}
 
 #header .right .contacts p:last-child {
   margin-bottom: 0;
@@ -317,51 +320,70 @@ main {
     border-radius: 50%;
   }
 }
-      #header .right .photo img {
-        display: block;
-        height: 100%;
-        width: 100%;
-        object-fit: cover;
-      }
+
+#header .right .photo img {
+  display: block;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
 
 #experience {
-  margin-bottom: 16px; }
-  #experience h2 {
-    display: block;
+  margin-bottom: 16px;
+}
+
+#experience h2 {
+  display: block;
     padding: 0 8px;
     margin-bottom: 24px;
     font-size: 32px;
-    font-weight: 700;
-    line-height: 48px;
-    color: #3E7ABC;
-    border-bottom: 3px solid #999; }
+  font-weight: 700;
+  line-height: 48px;
+  color: #3E7ABC;
+  border-bottom: 3px solid #999;
+}
+
+#experience .step {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+
+@media (max-width: 767px) {
   #experience .step {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: flex-start;
-    align-items: flex-start;
-    margin-bottom: 16px; }
-    #experience .step h3, #experience .step p {
-      display: block;
-      padding: 0 8px;
-      margin-bottom: 16px;
-      font-size: 16px;
-      font-weight: 400;
-      line-height: 24px;
-      text-align: justify;
-      color: #333; }
-    #experience .step a {
+    flex-wrap: wrap;
+  }
+
+  #experience .step:not(:last-child) {
+    margin-bottom: 24px;
+  }
+}
+
+#experience .step h3, #experience .step p {
+  display: block;
+  padding: 0 8px;
+  margin-bottom: 16px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: justify;
+  color: #333;
+}
+
+#experience .step a {
       color: #3E7ABC; }
       #experience .step a:hover, #experience .step a:active {
         color: #6EA3DE; }
     #experience .step .left {
       min-width: 152px; }
-      @media (max-width: 767px) {
-        #experience .step .left {
-          min-width: 80px;
-          width: 80px; }
-          #experience .step .left p {
-            text-align: center; } }
+
+@media (max-width: 767px) {
+  #experience .step .left p {
+    font-weight: 700;
+  }
+}
     #experience .step .right {
       flex-grow: 1; }
 
@@ -458,32 +480,43 @@ main {
 
 #projects ul li {
   display: block;
-      padding: 0 8px 8px;
-      margin-bottom: 24px;
-      flex-basis: 384px; }
-      @media (max-width: 767px) {
-        #projects ul li {
-          flex-basis: auto; } }
-      #projects ul li h3 {
-        display: block;
-        margin-bottom: 12px;
-        font-size: 24px;
+  padding: 0 8px 8px;
+  margin-bottom: 24px;
+  flex-basis: 384px;
+}
+
+@media (max-width: 767px) {
+  #projects ul li {
+    flex-basis: auto;
+  }
+}
+
+#projects ul li h3 {
+  display: block;
+  margin-bottom: 12px;
+  font-size: 24px;
         font-weight: 400;
         color: #333; }
         #projects ul li h3 a {
           display: inline;
           color: #333;
           border: none; }
-          #projects ul li h3 a:hover, #projects ul li h3 a:active {
-            color: #999; }
-      #projects ul li a {
-        display: block;
-        border: 1px solid #999; }
-        #projects ul li a .img-box {
-          display: block;
-          overflow: hidden;
-          max-height: 205px;
-          max-width: 366px; }
+
+#projects ul li h3 a:hover, #projects ul li h3 a:active {
+  color: #999;
+}
+
+#projects ul li a {
+  display: block;
+  border: 1px solid #999;
+}
+
+#projects ul li a .img-box {
+  display: block;
+  overflow: hidden;
+  max-height: 205px;
+  max-width: 366px;
+}
 
 #projects ul li a .img-box img {
   display: block;
@@ -518,16 +551,21 @@ main {
 }
 
 #education ul {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
-    align-items: stretch; }
-    @media (max-width: 767px) {
-      #education ul {
-        flex-flow: column nowrap;
-        justify-content: center; } }
-    #education ul li {
-      display: block;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: stretch;
+}
+
+@media (max-width: 767px) {
+  #education ul {
+    flex-flow: column nowrap;
+    justify-content: center;
+  }
+}
+
+#education ul li {
+  display: block;
       padding: 0 8px 8px;
       margin-bottom: 24px;
       flex-basis: 384px; }
@@ -545,19 +583,23 @@ main {
           overflow: hidden;
           max-height: 520px;
           max-width: 368px; }
-          #education ul li a .img-box img {
-            display: block;
-            height: 100%;
-            width: 100%; }
+
+#education ul li a .img-box img {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
 
 #skills {
   padding-left: 32px;
   margin-bottom: 16px;
 }
-  @media (max-width: 1151px) {
-    #skills {
-      padding-left: 0;
-    } }
+
+@media (max-width: 1151px) {
+  #skills {
+    padding-left: 0;
+  }
+}
 
 #skills h2 {
   display: block;
@@ -575,11 +617,13 @@ main {
   flex-flow: column nowrap;
   justify-content: space-between;
 }
-    @media (max-width: 1151px) {
-      #skills ul {
-        flex-flow: row wrap;
-        padding-left: 0;
-      } }
+
+@media (max-width: 1151px) {
+  #skills ul {
+    flex-flow: row wrap;
+    padding-left: 0;
+  }
+}
 
 #skills ul li {
   display: block;
@@ -596,12 +640,14 @@ main {
 @media (max-width: 1151px) {
   #skills ul li {
     width: 354px;
+    margin-bottom: 32px;
   }
 }
 
 @media (max-width: 767px) {
   #skills ul li {
     width: 100%;
+    margin-bottom: 24px;
   }
 }
 

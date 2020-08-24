@@ -12,6 +12,14 @@
     align-items: flex-start;
     margin-bottom: 16px;
 
+    @media (max-width: 767px) {
+      flex-wrap: wrap;
+
+      &:not(:last-child) {
+        margin-bottom: 24px;
+      }
+    }
+
     h3, p {
       @include paragraph;
     }
@@ -28,11 +36,8 @@
       min-width: 152px;
 
       @media (max-width: 767px) {
-        min-width: 80px;
-        width: 80px;
-
         p {
-          text-align: center;
+          font-weight: $font-weight-regular;
         }
       }
     }
