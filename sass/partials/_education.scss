@@ -1,6 +1,10 @@
 #education {
   margin-bottom: 16px;
 
+  @media print {
+    display: none;
+  }
+
   h2 {
     @include heading-2;
   }

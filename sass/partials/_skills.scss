@@ -1,4 +1,4 @@
-#sidebar {
+#skills {
   padding-left: 32px;
   margin-bottom: 16px;
 
@@ -34,6 +34,11 @@
 
       @media (max-width: 767px) {
         width: 100%;
+      }
+
+      @media print {
+        @include paragraph;
+        display: list-item;
       }
     }
   }

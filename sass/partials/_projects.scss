@@ -1,8 +1,26 @@
 #projects {
   margin-bottom: 16px;
 
+  @media print {
+    display: none;
+  }
+
   h2 {
     @include heading-2;
+
+    span {
+      font-weight: 400;
+      font-size: .7em;
+      color: $color-secondary-light;
+
+      a {
+        color: $color-secondary-light;
+
+        &:hover, &:active {
+          color: $color-secondary;
+        }
+      }
+    }
   }
 
   ul {

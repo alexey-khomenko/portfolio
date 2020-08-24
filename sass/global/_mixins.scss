@@ -3,7 +3,7 @@
   padding: 0 8px;
   margin-bottom: 24px;
   font-size: 32px;
-  font-weight: 700;
+  font-weight: $font-weight-regular;
   line-height: 48px;
   color: $color-primary;
   border-bottom: 3px solid $color-secondary-light;
@@ -13,7 +13,7 @@
   display: block;
   margin-bottom: 12px;
   font-size: 24px;
-  font-weight: 400;
+  font-weight: $font-weight;
   color: $color-secondary;
 }
 
@@ -22,7 +22,7 @@
   padding: 0 8px;
   margin-bottom: 16px;
   font-size: 16px;
-  font-weight: 400;
+  font-weight: $font-weight;
   line-height: 24px;
   text-align: justify;
   color: $color-secondary;

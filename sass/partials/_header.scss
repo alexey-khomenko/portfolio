@@ -114,20 +114,40 @@
           @media (max-width: 767px) {
             justify-content: center;
           }
+
+          a {
+            display: flex;
+          }
         }
 
         a {
-          display: block;
+          display: inline;
           color: $color-secondary;
 
           &:hover, &:active {
             color: $color-secondary-light;
           }
+
+          &.viber {
+            color: #574E92;
+
+            &:hover, &:active {
+              color: #9C95C9;
+            }
+          }
+
+          &.telegram {
+            color: #0D86D7;
+
+            &:hover, &:active {
+              color: #72BBEB;
+            }
+          }
         }
 
         svg {
           height: 20px;
-          margin-left: 6px;
+          margin: auto 0 auto 16px;
         }
       }
     }
@@ -141,14 +161,18 @@
 
       @media (max-width: 767px) {
         order: 1;
+        height: 176px;
         margin-left: auto;
         margin-right: auto;
+        overflow: hidden;
+        border-radius: 50%;
       }
 
       img {
         display: block;
         height: 100%;
         width: 100%;
+        object-fit: cover;
       }
     }
   }
