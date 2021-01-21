@@ -1,0 +1,169 @@
+extends ../layouts/app
+
+block data
+    - title = 'Alexey Khomenko | Portfolio';
+    -
+        header = {
+            name: {
+                first: 'Alexey',
+                last: 'Khomenko',
+            },
+            profession: 'Web developer',
+            address: 'Kharkiv, Ukraine',
+            email: 'alexey.alexeevich.khomenko@gmail.com',
+            phone: {
+                tel: '+380 (68) 146 89 54',
+                tg: 'AlexeyKhomenko',
+            },
+        }
+    -
+        experience = [
+            {
+                date: '10.2019 - 01.2021',
+                title: '<a href="https://bx-master.com" target="_blank">BX-master</a>',
+                text: [
+                    'Support for sites based on bitrix (<a href="https://airsoft-rus.ru" target="_blank">airsoft-rus.ru</a>, '
+                    + '<a href="https://istudio.ua/" target="_blank">istudio.ua</a> and others). Development of new functionality, '
+                    + 'correction of old functionality, integration of external services (parcel delivery, sms-notification, etc).',
+                    'Page appearance redesign, responsive layout tweaking.',
+                ],
+            },
+            {
+                date: '01.2019 - 09.2019',
+                title: 'Freelance',
+                text: [
+                    'Client request management. Site structure development. Front-end layout implementation.',
+                    'Markup activity mentoring.',
+                ],
+            },
+            {
+                date: '01.2012 - 12.2018',
+                title: 'Startup <a href="https://velib.com" target="_blank">velib.com</a>',
+                text: [
+                    'I took an active part in the development of a self-made engine on php, also in the design of '
+                    + 'the MySQL database, have fully developed the front-end part.',
+                    'In 2018, the server side was transferred to laravel. My task was to update the front-end for '
+                    + 'the new engine.',
+                ],
+            },
+            {
+                date: '09.2011 - 02.2015',
+                title: 'Yaroslav Mudryi National Law University',
+                text: [
+                    'Laboratory engineer of educational process technical support.',
+                ],
+            },
+        ]
+    -
+        qualities = [
+            'analytical thinking',
+            'conscientiousness',
+            'quick learning',
+            'responsibility',
+            'self-organization',
+            'dedication',
+            'perseverance',
+            'teamwork',
+        ]
+    -
+        languages = [
+            {
+                name: 'Russian',
+                value: 'native',
+            },
+            {
+                name: 'Ukrainian',
+                value: 'native',
+            },
+            {
+                name: 'English',
+                value: 'elementary',
+            },
+        ]
+    -
+        projects = [
+            {
+                name: 'Organic Chest',
+                demo: 'https://alexey-khomenko.github.io/organic/',
+                prod: 'https://organicchest.com.ua',
+                src: './images/project__organic.jpg',
+            },
+            {
+                name: 'Velib',
+                prod: 'https://velib.com',
+                src: './images/project__velib.jpg',
+            },
+            {
+                name: 'Asgar',
+                demo: 'https://alexey-khomenko.github.io/asgar/',
+                src: './images/project__asgar.jpg',
+            },
+            {
+                name: 'Siltek',
+                demo: 'https://alexey-khomenko.github.io/siltek/',
+                src: './images/project__siltek.jpg',
+            },
+            {
+                name: 'Airsoft-rus (order processing)',
+                demo: 'https://alexey-khomenko.github.io/airsoft/',
+                src: './images/project__airsoft.jpg',
+            },
+            {
+                name: 'Nice Bar',
+                demo: 'https://alexey-khomenko.github.io/nicebar/',
+                src: './images/project__nicebar.jpg',
+            },
+            {
+                name: 'Mostra',
+                demo: 'https://alexey-khomenko.github.io/mostra/',
+                src: './images/project__mostra.jpg',
+            },
+            {
+                name: 'Jkaros',
+                demo: 'https://alexey-khomenko.github.io/jkaros/',
+                src: './images/project__jkaros.jpg',
+            },
+        ]
+    -
+        education = [
+            {
+                src: './images/education__cert-1.jpg',
+                src_b: './images/education__cert-1b.jpg',
+                ratio: (1668 / 2360).toFixed(5),
+                alt: 'certificate'
+            },
+            {
+                src: './images/education__cert-2.jpg',
+                src_b: './images/education__cert-2b.jpg',
+                ratio: (1668 / 2360).toFixed(5),
+                alt: 'diploma'
+            },
+        ]
+    -
+        skills = [
+            'HTML',
+            'CSS / SCSS',
+            'Bootstrap',
+            'Tailwind',
+            'Blade (Laravel)',
+            'Pug',
+            'JS / JQuery',
+            'Alpine',
+            'Gulp / Webpack',
+            'PHP / WordPress',
+            'Git / GitHub',
+            'MySQL',
+        ]
+
+block header
+    include ../layout/app/header
+
+block main
+    div(id="content")
+        include ../page/index/experience
+        include ../page/index/qualities
+        include ../page/index/languages
+        include ../page/index/projects
+        include ../page/index/education
+    div(id="skills")
+        include ../page/index/skills
