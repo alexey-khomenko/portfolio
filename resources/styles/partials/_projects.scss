@@ -16,7 +16,7 @@
       a {
         color: $color-secondary-light;
 
-        &:hover, &:focus {
+        &:hover {
           color: $color-secondary;
         }
       }
@@ -58,9 +58,9 @@
           bottom: -1px;
           color: transparent;
           background-color: transparent;
-          transition: all 500ms ease;
+          transition: all 400ms ease;
 
-          &:hover, &:focus {
+          &:hover {
             color: #fff;
             background-color: rgba(0, 0, 0, .7);
             text-shadow: 0 0 5px #000;
@@ -98,11 +98,11 @@
   .img-box {
     &:hover, &:focus {
       box-shadow: 0 0 8px 4px $color-primary;
-      transition: box-shadow .3s ease;
+      transition: box-shadow 400ms ease;
     }
 
     .link {
-      &:hover, &:focus {
+      &:hover {
         color: transparent;
         background-color: transparent;
         text-shadow: none;

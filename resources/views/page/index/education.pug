@@ -15,9 +15,16 @@ if education.length
                         div(class="img-box", @click="openModal(cert)")
                             img(:src="cert.src", :alt="cert.alt")
 
-        div(class="shadow", x-show="show", @resize.window="fixModal()")
-            div(class="modal", x-ref="modal")
-                div(class="close")
-                    span
-                        | &times;
-                img(:src="src", alt="", @click.away="show = false")
+        div(class="shadow", @resize.window="fixModal()", x-show="show",
+            x-transition:enter="open-delay", x-transition:enter-start="closed", x-transition:enter-end="opened",
+            x-transition:leave="close-delay", x-transition:leave-start="opened", x-transition:leave-end="closed",
+            x-cloak)
+            div(class="modal-wrap", x-show="show",
+                x-transition:enter-start="closed", x-transition:enter-end="opened",
+                x-transition:leave-start="opened", x-transition:leave-end="closed",
+                x-cloak)
+                div(class="modal", x-ref="modal")
+                    div(class="close")
+                        span
+                            | &times;
+                    img(:src="src", alt="", @click.away="show = false")

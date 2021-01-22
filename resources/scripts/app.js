@@ -4,7 +4,8 @@ window.galleryData = function () {
         certs: [],
         show: false,
         src: '',
-        ratio: 1,
+        width: 1,
+        height: 1,
         galleryInit: function () {
             this.certs = JSON.parse(this.$el.dataset.gallery);
             this.$el.querySelector("[data-preload]").remove();
@@ -12,14 +13,17 @@ window.galleryData = function () {
         },
         openModal: function (cert) {
             this.src = cert.src_b;
-            this.ratio = parseFloat(cert.ratio);
+            this.width = cert.width;
+            this.height = cert.height;
             this.show = true;
             this.fixModal();
         },
         fixModal: function () {
-            const w_ratio = document.documentElement.clientWidth / document.documentElement.clientHeight;
+            const w_height = document.documentElement.clientHeight;
+            const w_width = document.documentElement.clientWidth;
+            const w_ratio = w_width / w_height;
 
-            if (w_ratio > this.ratio) {
+            if (w_ratio > this.width / this.height && this.height > w_height) {
                 this.$refs.modal.classList.add("fix");
             } else {
                 this.$refs.modal.classList.remove("fix");

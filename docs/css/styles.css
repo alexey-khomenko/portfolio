@@ -198,6 +198,10 @@ main {
   }
 }
 
+[x-cloak] {
+  display: none !important;
+}
+
 header {
   display: flex;
   flex-flow: row wrap;
@@ -500,7 +504,7 @@ header .right .photo img {
 #projects h2 span a {
   color: #999;
 }
-#projects h2 span a:hover, #projects h2 span a:focus {
+#projects h2 span a:hover {
   color: #333;
 }
 #projects ul {
@@ -553,9 +557,9 @@ header .right .photo img {
   bottom: -1px;
   color: transparent;
   background-color: transparent;
-  transition: all 500ms ease;
+  transition: all 400ms ease;
 }
-#projects ul li .img-box .link:hover, #projects ul li .img-box .link:focus {
+#projects ul li .img-box .link:hover {
   color: #fff;
   background-color: rgba(0, 0, 0, 0.7);
   text-shadow: 0 0 5px #000;
@@ -585,9 +589,9 @@ header .right .photo img {
 
 #wrapper.mobile .img-box:hover, #wrapper.mobile .img-box:focus {
   box-shadow: 0 0 8px 4px #3E7ABC;
-  transition: box-shadow 0.3s ease;
+  transition: box-shadow 400ms ease;
 }
-#wrapper.mobile .img-box .link:hover, #wrapper.mobile .img-box .link:focus {
+#wrapper.mobile .img-box .link:hover {
   color: transparent;
   background-color: transparent;
   text-shadow: none;
@@ -640,12 +644,12 @@ header .right .photo img {
 #education ul li .img-box {
   display: block;
   max-width: 368px;
-  transition: box-shadow 1s ease;
+  transition: box-shadow 800ms ease;
   cursor: pointer;
 }
 #education ul li .img-box:hover, #education ul li .img-box:focus {
   box-shadow: 0 0 8px 4px #3E7ABC;
-  transition: box-shadow 0.3s ease;
+  transition: box-shadow 400ms ease;
 }
 #education ul li .img-box img {
   display: block;
@@ -653,10 +657,7 @@ header .right .photo img {
      object-fit: contain;
 }
 #education .shadow {
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: center;
-  align-items: center;
+  display: block;
   width: 100%;
   height: 100%;
   overflow: hidden;
@@ -665,21 +666,55 @@ header .right .photo img {
   left: 0;
   right: 0;
   bottom: 0;
-  z-index: 3;
+  transition-property: z-index;
+  transition-timing-function: linear;
   background-color: rgba(0, 0, 0, 0.7);
 }
-#education .shadow .modal {
+#education .shadow.closed {
+  z-index: 0;
+}
+#education .shadow.close-delay {
+  transition-duration: 500ms;
+}
+#education .shadow.opened {
+  z-index: 400;
+}
+#education .shadow.open-delay {
+  transition-duration: 0ms;
+}
+#education .shadow .modal-wrap {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: transform 400ms ease-in;
+}
+#education .shadow .modal-wrap.closed {
+  transform: translateY(-100%);
+}
+#education .shadow .modal-wrap.opened {
+  transform: translateY(0);
+}
+#education .shadow .modal-wrap .modal {
   display: block;
   overflow: hidden;
   position: relative;
   max-width: 100%;
   max-height: 100%;
 }
-#education .shadow .modal.fix {
+#education .shadow .modal-wrap .modal.fix {
   width: auto;
   height: 100%;
 }
-#education .shadow .modal .close {
+#education .shadow .modal-wrap .modal .close {
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
@@ -694,13 +729,13 @@ header .right .photo img {
   color: #fff;
   cursor: pointer;
 }
-#education .shadow .modal .close:hover, #education .shadow .modal .close:focus {
+#education .shadow .modal-wrap .modal .close:hover, #education .shadow .modal-wrap .modal .close:focus {
   background-color: #6EA3DE;
 }
-#education .shadow .modal .close span {
+#education .shadow .modal-wrap .modal .close span {
   font-size: 32px;
 }
-#education .shadow .modal img {
+#education .shadow .modal-wrap .modal img {
   display: block;
   -o-object-fit: contain;
      object-fit: contain;

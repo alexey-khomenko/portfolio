@@ -138,7 +138,7 @@
                 </li>
               </ul>
             </section>
-            <section id="education" data-gallery="[{&quot;src&quot;:&quot;./images/education__cert-1.jpg&quot;,&quot;src_b&quot;:&quot;./images/education__cert-1b.jpg&quot;,&quot;ratio&quot;:&quot;0.70678&quot;,&quot;alt&quot;:&quot;certificate&quot;},{&quot;src&quot;:&quot;./images/education__cert-2.jpg&quot;,&quot;src_b&quot;:&quot;./images/education__cert-2b.jpg&quot;,&quot;ratio&quot;:&quot;0.70678&quot;,&quot;alt&quot;:&quot;diploma&quot;}]" x-data="galleryData()" x-init="galleryInit()">
+            <section id="education" data-gallery="[{&quot;src&quot;:&quot;./images/education__cert-1.jpg&quot;,&quot;src_b&quot;:&quot;./images/education__cert-1b.jpg&quot;,&quot;width&quot;:1668,&quot;height&quot;:2360,&quot;alt&quot;:&quot;certificate&quot;},{&quot;src&quot;:&quot;./images/education__cert-2.jpg&quot;,&quot;src_b&quot;:&quot;./images/education__cert-2b.jpg&quot;,&quot;width&quot;:1668,&quot;height&quot;:2360,&quot;alt&quot;:&quot;diploma&quot;}]" x-data="galleryData()" x-init="galleryInit()">
               <h2>Education</h2>
               <ul data-preload>
                 <li>
@@ -157,9 +157,11 @@
                   </template>
                 </ul>
               </template>
-              <div class="shadow" x-show="show" @resize.window="fixModal()">
-                <div class="modal" x-ref="modal">
-                  <div class="close"><span>&times;</span></div><img :src="src" alt="" @click.away="show = false">
+              <div class="shadow" @resize.window="fixModal()" x-show="show" x-transition:enter="open-delay" x-transition:enter-start="closed" x-transition:enter-end="opened" x-transition:leave="close-delay" x-transition:leave-start="opened" x-transition:leave-end="closed" x-cloak>
+                <div class="modal-wrap" x-show="show" x-transition:enter-start="closed" x-transition:enter-end="opened" x-transition:leave-start="opened" x-transition:leave-end="closed" x-cloak>
+                  <div class="modal" x-ref="modal">
+                    <div class="close"><span>&times;</span></div><img :src="src" alt="" @click.away="show = false">
+                  </div>
                 </div>
               </div>
             </section>
